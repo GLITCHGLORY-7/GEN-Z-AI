@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEN K AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <header class="top-bar">
+            <div class="logo">
+                <i class="fa-solid fa-brain" style="color: #bc13fe;" aria-hidden="true"></i>
+                <h1>ZEN K <span>AI</span></h1>
+            </div>
+            <div class="top-right">
+                <div class="status-indicator" aria-live="polite">
+                    Status: <span class="status-dot" aria-hidden="true"></span> <span class="status-text">Idle</span>
+                    <i class="fa-solid fa-bars-staggered status-icon" aria-hidden="true"></i>
+                </div>
+                <button class="icon-btn theme-btn" id="theme-btn" aria-label="Toggle Theme">
+                    <i class="fa-regular fa-sun" aria-hidden="true"></i>
+                </button>
+                <button class="icon-btn profile-btn" aria-label="User Profile">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Sidebar -->
+            <nav class="sidebar" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li class="active" role="button" tabindex="0" aria-label="Home"><i class="fa-solid fa-house" aria-hidden="true"></i> <span>Home</span></li>
+                    <li role="button" tabindex="0" aria-label="Chat"><i class="fa-regular fa-message" aria-hidden="true"></i> <span>Chat</span></li>
+                    <li role="button" tabindex="0" aria-label="Commands"><i class="fa-solid fa-grip" aria-hidden="true"></i> <span>Commands</span></li>
+                    <li role="button" tabindex="0" aria-label="Reminders"><i class="fa-regular fa-bell" aria-hidden="true"></i> <span>Reminders</span></li>
+                    <li role="button" tabindex="0" aria-label="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i> <span>Settings</span></li>
+                    <li role="button" tabindex="0" aria-label="Profile"><i class="fa-regular fa-user" aria-hidden="true"></i> <span>Profile</span></li>
+                </ul>
+                <div class="sidebar-info-card">
+                    <h3>ZEN K AI</h3>
+                    <p>Your smart AI assistant that understands you, controls your device, and gets things done.</p>
+                    <div class="info-orb" aria-hidden="true"></div>
+                </div>
+            </nav>
+
+            <!-- Center Assistant Area -->
+            <main class="center-area" aria-label="AI Assistant Area">
+                <div class="welcome-box">
+                    <p class="greeting">Hello!</p>
+                    <h2>I'm <span class="brand">ZEN K AI</span></h2>
+                    <p class="subtitle">Your personal AI assistant.<br>How can I help you today?</p>
+                </div>
+
+                <div class="voice-orb-container" aria-live="polite">
+                    <div class="glow-ring" aria-hidden="true"></div>
+                    <div class="voice-orb" aria-hidden="true">
+                        <div class="waveform-animation">
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+                    <h3 class="state-text">Listening...</h3>
+                    <p class="state-subtext">Say "Hey ZEN K" to start</p>
+                </div>
+
+                <div class="input-controls">
+                    <button class="control-btn" aria-label="Type Command"><i class="fa-solid fa-keyboard" aria-hidden="true"></i><span>Type</span></button>
+                    <button class="mic-btn" id="mic-btn" aria-label="Toggle Microphone"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    <button class="control-btn" id="stop-btn" aria-label="Stop Assistant"><i class="fa-solid fa-xmark" aria-hidden="true"></i><span>Stop</span></button>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions-section" aria-label="Quick Actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-grid" role="group">
+                        <button class="action-card" data-action="youtube" aria-label="Open YouTube">
+                            <div class="icon-wrap youtube" aria-hidden="true"><i class="fa-brands fa-youtube"></i></div>
+                            <span>Open YouTube</span>
+                        </button>
+                        <button class="action-card" data-action="whatsapp" aria-label="Open WhatsApp">
+                            <div class="icon-wrap whatsapp" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+                            <span>Open WhatsApp</span>
+                        </button>
+                        <button class="action-card" data-action="google" aria-label="Search Google">
+                            <div class="icon-wrap google" aria-hidden="true"><i class="fa-brands fa-google"></i></div>
+                            <span>Search Google</span>
+                        </button>
+                        <button class="action-card" data-action="time" aria-label="Check Time">
+                            <div class="icon-wrap time" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+                            <span>Check Time</span>
+                        </button>
+                        <button class="action-card" data-action="joke" aria-label="Tell a Joke">
+                            <div class="icon-wrap more-icon" aria-hidden="true"><i class="fa-solid fa-face-laugh-squint"></i></div>
+                            <span>Tell a Joke</span>
+                        </button>
+                        <button class="action-card more" aria-label="More Options">
+                            <div class="icon-wrap more-icon" aria-hidden="true"><i class="fa-solid fa-grip"></i></div>
+                            <span>More</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bottom-branding">
+                    <div class="privacy-note">
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                        <div>
+                            <h4>Privacy First</h4>
+                            <p>Your data is secure with us.</p>
+                        </div>
+                    </div>
+                    <div class="bottom-waveform" aria-hidden="true"></div>
+                    <div class="always-ready-note">
+                        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                        <div>
+                            <h4>Always Ready</h4>
+                            <p>Always here for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Conversation Panel -->
+            <aside class="conversation-panel" aria-label="Conversation History">
+                <div class="panel-header">
+                    <h3>Conversation</h3>
+                    <button class="clear-btn" id="clear-chat" aria-label="Clear Chat History">Clear</button>
+                </div>
+                <div class="chat-history" id="chat-history" aria-live="polite">
+                    <!-- Chat bubbles will go here -->
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Type a message..." aria-label="Type your message to ZEN K AI">
+                    <button class="send-btn" id="send-btn" aria-label="Send Message"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
