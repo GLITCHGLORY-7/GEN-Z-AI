@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEN K AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <div class="app-wrapper">
+        <!-- LEFT SIDEBAR -->
+        <aside class="left-sidebar">
+            <div class="sidebar-header">
+                <h2>Features</h2>
+            </div>
+            <nav class="features-menu">
+                <a href="#" class="menu-item active" id="menu-chat">
+                    <i class="fa-solid fa-message"></i> Chat
+                </a>
+                <a href="#" class="menu-item" id="menu-voice">
+                    <i class="fa-solid fa-microphone-lines"></i> Voice Assistant
+                </a>
+                <a href="#" class="menu-item" id="menu-search">
+                    <i class="fa-solid fa-globe"></i> Web Search
+                </a>
+                <a href="#" class="menu-item" id="menu-apps">
+                    <i class="fa-solid fa-shapes"></i> Open Apps
+                </a>
+                <a href="#" class="menu-item" id="menu-notes">
+                    <i class="fa-solid fa-note-sticky"></i> Notes
+                </a>
+                <a href="#" class="menu-item" id="menu-reminders">
+                    <i class="fa-solid fa-bell"></i> Reminders
+                </a>
+                <a href="#" class="menu-item" id="menu-settings">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- CENTER PANEL -->
+        <main class="center-panel">
+            <header class="app-header">
+                <div class="header-text">
+                    <h1>ZEN K AI</h1>
+                    <p>How can I help you today?</p>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="quick-suggestions">
+                <button class="suggestion-btn" data-query="Tell me a joke">Tell me a joke</button>
+                <button class="suggestion-btn" data-query="What can you do?">What can you do?</button>
+                <button class="suggestion-btn" data-query="Today's news">Today's news</button>
+                <button class="suggestion-btn" data-query="Motivate me">Motivate me</button>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-history" id="chat-history">
+                    <!-- Chat messages will be dynamically added here -->
+                </div>
+            </div>
+
+            <footer class="input-section">
+                <div class="input-wrapper">
+                    <button class="icon-btn mic-btn" id="mic-btn" aria-label="Voice input">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Ask something..." autocomplete="off">
+                    <button class="icon-btn send-btn" id="send-btn" aria-label="Send message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </footer>
+        </main>
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right-sidebar">
+            <div class="status-card">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-sparkles avatar-icon"></i>
+                    <div class="status-dot online"></div>
+                </div>
+                <div class="status-info">
+                    <h3 id="status-title">Ready</h3>
+                    <p id="status-text">Ready to assist you</p>
+                </div>
+            </div>
+
+            <div class="right-section quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="actions-grid">
+                    <button class="action-btn" data-query="What time is it">
+                        <i class="fa-regular fa-clock"></i> Time
+                    </button>
+                    <button class="action-btn" data-query="What is today's date">
+                        <i class="fa-regular fa-calendar"></i> Date
+                    </button>
+                    <button class="action-btn" data-query="Weather now">
+                        <i class="fa-solid fa-cloud-sun"></i> Weather
+                    </button>
+                    <button class="action-btn" data-query="System info">
+                        <i class="fa-solid fa-laptop-code"></i> System
+                    </button>
+                    <button class="action-btn" data-query="Take a note">
+                        <i class="fa-solid fa-pencil"></i> Note
+                    </button>
+                    <button class="action-btn" data-query="Remind me">
+                        <i class="fa-solid fa-stopwatch"></i> Remind
+                    </button>
+                </div>
+            </div>
+
+            <div class="right-section memory-panel">
+                <h3>Memory Panel</h3>
+                <div class="memory-content" id="memory-content">
+                    <p class="empty-text">No memories stored yet.</p>
+                </div>
+            </div>
+
+            <div class="right-section system-controls">
+                <h3>System Controls</h3>
+                <div class="controls-grid">
+                    <button class="control-btn" data-action="lock" title="Lock System">
+                        <i class="fa-solid fa-lock"></i>
+                    </button>
+                    <button class="control-btn" data-action="sleep" title="Sleep Mode">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="control-btn" data-action="restart" title="Restart">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                    <button class="control-btn" data-action="shutdown" title="Shutdown">
+                        <i class="fa-solid fa-power-off"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Apps Management Modal -->
+    <div class="modal-overlay" id="apps-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Manage Apps</h2>
+                <button class="close-btn" id="close-apps-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="apps-list-container" class="apps-list-container">
+                    <!-- App items injected here -->
+                </div>
+                <div class="add-app-form">
+                    <h3>Add New App</h3>
+                    <input type="text" id="new-app-title" placeholder="App Name (e.g. Netflix)">
+                    <input type="text" id="new-app-url" placeholder="URL (e.g. https://netflix.com)">
+                    <button id="add-app-btn">Add App</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
